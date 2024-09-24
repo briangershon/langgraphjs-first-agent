@@ -1,0 +1,23 @@
+{
+  "name": "typescript-vscode-dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@langchain/community": "^0.3.2",
+    "@langchain/core": "^0.3.3",
+    "@langchain/langgraph": "^0.2.8",
+    "@langchain/openai": "^0.3.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.6.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "dev": "npx tsx src/index.ts"
+  },
+  "author": "Brian Gershon",
+  "license": "MIT",
+  "description": ""
+}
