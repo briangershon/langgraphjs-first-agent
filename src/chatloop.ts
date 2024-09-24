@@ -1,6 +1,3 @@
-// chatloop.ts
-import { BaseMessageLike } from "@langchain/core/messages";
-
 // We need to import the chatbot we created so we can use it here
 import { app } from "./chatbot";
 
@@ -11,7 +8,6 @@ import { stdin as input, stdout as output } from "node:process";
 const lineReader = readline.createInterface({ input, output });
 
 console.log("Type 'exit' or 'quit' to quit");
-const messages = Array<BaseMessageLike>();
 
 async function chatLoop() {
   while (true) {
@@ -21,11 +17,14 @@ async function chatLoop() {
       lineReader.close();
       break;
     }
-    messages.push({ content: answer, role: "user" });
 
     // Run the chatbot, providing it the `messages` array containing the conversation
-    const output = await app.invoke({ messages });
-    messages.push(output.messages[output.messages.length - 1]);
+    const output = await app.invoke(
+      {
+        messages: [{ content: answer, type: "user" }],
+      },
+      { configurable: { thread_id: "42" } }
+    );
     console.log("Agent: ", output.messages[output.messages.length - 1].content);
   }
 }
