@@ -1,6 +1,8 @@
-# typescript-vscode-dev
+# langgraphjs-first-agent
 
-Use a VSCode dev container as your virtual TypeScript development environment for Node apps.
+Review and run through new LangGraph (and LangGraph Studio) TypeScript tutorial:
+
+https://github.com/langchain-ai/langgraphjs/tree/allan/first-agent-tutorial/docs/docs/tutorials/first-agent
 
 ## Getting Started
 
