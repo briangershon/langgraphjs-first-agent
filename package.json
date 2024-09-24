@@ -1,7 +1,7 @@
 {
   "name": "typescript-vscode-dev",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "dependencies": {
     "@langchain/community": "^0.3.2",
     "@langchain/core": "^0.3.3",
