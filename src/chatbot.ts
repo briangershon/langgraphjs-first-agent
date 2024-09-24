@@ -45,4 +45,4 @@ export const app = graphBuilder
   .addNode("tools", tools)
   .addConditionalEdges("agent", shouldUseTool)
   .addEdge("tools", "agent")
-  .compile({ checkpointer: new MemorySaver() });
+  .compile({ checkpointer: new MemorySaver(), interruptBefore: ["tools"] });
