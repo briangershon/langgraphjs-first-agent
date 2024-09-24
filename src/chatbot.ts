@@ -5,6 +5,7 @@ import type { AIMessage } from "@langchain/core/messages";
 import { MessagesAnnotation, StateGraph } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { ChatOpenAI } from "@langchain/openai";
+import { MemorySaver } from "@langchain/langgraph";
 
 const openAIApiKey = process.env.OPENAI_API_KEY;
 if (!openAIApiKey) {
@@ -44,4 +45,4 @@ export const app = graphBuilder
   .addNode("tools", tools)
   .addConditionalEdges("agent", shouldUseTool)
   .addEdge("tools", "agent")
-  .compile();
+  .compile({ checkpointer: new MemorySaver() });
