@@ -15,7 +15,7 @@
     "typescript": "^5.6.2"
   },
   "scripts": {
-    "dev": "npx tsx src/index.ts"
+    "dev": "npx tsx src/chatloop.ts"
   },
   "author": "Brian Gershon",
   "license": "MIT",
